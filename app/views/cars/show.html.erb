@@ -1,7 +1,9 @@
 <h1><%= @car.name %></h1>
 
-<p><%= @car.price %></p>
+<p><b>Price:</b><%= @car.price %></p>
+
+<p>  <b>Color:</b> <%= @car.color %> </p>
+<div style="background: <%= @car.color %>; border: 1px solid; width: 10px; height: 10px;"></div>
 
 <p><%= @car.description %></p>
 
-<p><%= @car.color %></p>
