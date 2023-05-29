@@ -1,5 +1,7 @@
 class Car < ApplicationRecord
 
+    has_many :comments
+
   validates :name, presence: true
   validates :price, presence: true,  length: { minimum: 5 }
   validates :description, presence: true,  length: { minimum: 20 }
