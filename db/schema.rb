@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_29_054229) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_29_071841) do
   create_table "cars", force: :cascade do |t|
     t.string "name"
     t.integer "price"
@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_29_054229) do
     t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -26,6 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_29_054229) do
     t.integer "car_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.index ["car_id"], name: "index_comments_on_car_id"
   end
 
