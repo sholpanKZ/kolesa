@@ -1,10 +1,14 @@
 <h1>CARS</h1>
 
+Our blog has <%= Car.public_count %> articles and counting!
+
 <ul>
   <% @cars.each do |car| %>
+    <% unless car.archived? %>
     <li>
       <%= link_to car.name, car %>
     </li>
+    <% end %>
   <% end %>
 </ul>
 
