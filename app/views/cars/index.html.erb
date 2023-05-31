@@ -1,6 +1,8 @@
 <h1>CARS</h1>
+<%= link_to "New Car", new_car_path, class: "btn btn-success" %>
+<br/>
+<p class="fw-light">Found <%= Car.public_count %> cars.</p>
 
-Our blog has <%= Car.public_count %> articles and counting!
 
 <ul>
   <% @cars.each do |car| %>
@@ -12,4 +14,4 @@ Our blog has <%= Car.public_count %> articles and counting!
   <% end %>
 </ul>
 
-<%= link_to "New Car", new_car_path %>
+
