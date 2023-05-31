@@ -60,6 +60,11 @@
           <ul class="navbar-nav">
               <% if current_user %>
                 <li class="nav-item">
+                  <% if current_user.avatar.attached? %>
+                      <%= image_tag current_user.avatar, {height: "45px", weight: "45px", class: "nav-link", style: "border-radius: 50%;"} %>
+                  <% end %>
+                </li>
+                <li>
                   <%= link_to current_user.email, "#", class: "nav-link" %>
                 </li>
                 <li class="nav-item">

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 
+  has_one_attached :avatar
   attr_accessor :password
   before_save :encrypt_password
 
