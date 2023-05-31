@@ -1,8 +1,8 @@
 class Car < ApplicationRecord
+  has_many_attached :images
+  has_many :comments, dependent: :destroy
 
-    has_many :comments, dependent: :destroy
-
-     include Visible
+  include Visible
 
   validates :name, presence: true
   validates :price, presence: true,  length: { minimum: 5 }
