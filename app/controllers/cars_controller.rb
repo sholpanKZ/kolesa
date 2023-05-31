@@ -2,7 +2,11 @@ class CarsController < ApplicationController
 
   http_basic_authenticate_with name: "Sholpan", password: "asa8789", except: [:index, :show]
   def index
-     @cars = Car.all
+    if current_user
+      @cars = Car.all
+    else
+      redirect_to "/home/show"
+    end
   end
 
   def show

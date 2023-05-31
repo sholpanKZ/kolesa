@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+
+#flash_alert {
+    background-color: #B00100;
+    color: #CCCCCC;
+}
+
+#flash_notice {
+    background-color: #3fd469;
+    padding: 10px;
+    margin: 10px;
+    color: #343434;
+    font-size: 18px;
+    border: #a5a3a3 1px solid;
+    /* border: black; */
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 7px -4px rgba(34, 60, 80, 0.6);
+    -moz-box-shadow: 5px 5px 7px -4px rgba(34, 60, 80, 0.6);
+    box-shadow: 5px 5px 7px -4px rgba(34, 60, 80, 0.6);
+}
