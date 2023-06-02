@@ -1,8 +1,5 @@
 <%= form_with model: [ @car, @car.comments.build ] do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
+  <%= form.hidden_field :commenter, value: current_user.email %>
   <p>
     <%= form.label :body %><br>
     <%= form.text_area :body %>
