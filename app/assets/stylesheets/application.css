@@ -33,3 +33,13 @@
     -moz-box-shadow: 5px 5px 7px -4px rgba(34, 60, 80, 0.6);
     box-shadow: 5px 5px 7px -4px rgba(34, 60, 80, 0.6);
 }
+
+.avatar-mini-circle {
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    vertical-align: center;
+}
+
