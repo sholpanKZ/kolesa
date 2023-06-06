@@ -16,9 +16,6 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
-
-
-
     if @car.save
       redirect_to @car
     else
@@ -27,11 +24,11 @@ class CarsController < ApplicationController
   end
  def edit
    @car = Car.find(params[:id])
-  end
+ end
 
   def update
     @car = Car.find(params[:id])
-
+    authorize @car
     if @car.update(car_params)
       redirect_to @car
     else
