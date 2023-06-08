@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_08_105102) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_08_113716) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -47,6 +47,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_08_105102) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
+    t.integer "owner_id"
+    t.index ["owner_id"], name: "index_cars_on_owner_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -75,6 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_08_105102) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "cars", "users", column: "owner_id"
   add_foreign_key "comments", "cars"
   add_foreign_key "comments", "users", column: "author_id"
 end

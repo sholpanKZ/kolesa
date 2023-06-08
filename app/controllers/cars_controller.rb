@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index,:show]
 
   def index
     @cars = Car.all
@@ -16,6 +16,7 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
+    @car.owner = current_user
     if @car.save
       redirect_to @car
     else
@@ -38,6 +39,7 @@ class CarsController < ApplicationController
 
    def destroy
     @car = Car.find(params[:id])
+    authorize @car
     @car.destroy
 
     redirect_to root_path, status: :see_other

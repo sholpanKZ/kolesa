@@ -18,10 +18,12 @@
   <% if policy(@car).edit? %>
     <li><%= link_to "Edit", edit_car_path(@car) %></li>
   <% end %>
-  <li><%= link_to "Destroy", car_path(@car), data: {
-                  turbo_method: :delete,
-                  turbo_confirm: "Are you sure?"
-                } %></li>
+  <% if policy(@car).destroy? %>
+    <li><%= link_to "Destroy", car_path(@car), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+  <% end %>
 </ul>
 
 <h2>Comments</h2>
