@@ -1,0 +1,9 @@
+<h1>My Cars</h1>
+
+<% @user_cars.each do |car| %>
+  <div>
+    <h2><%= car.name %> <%= car.color %> <%= car.price %></h2>
+    <p>Year: <%= car.description %></p>
+    <!-- Add other car details as needed -->
+  </div>
+<% end %>

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
 
   resources :cars do
     resources :comments
+    resources :user_cars, only: [:index]
   end
 end
