@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'home/show'=> "home#show"
+  get 'home/show' => "home#show"
   root "cars#index"
 
   resources :cars do
-   resources :comments
+    resources :comments
   end
 end

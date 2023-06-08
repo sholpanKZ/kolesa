@@ -7,7 +7,7 @@ class CarPolicy < ApplicationPolicy
   end
 
   def update?
-    user.present? && user.admin?
+    user.present? && record.owner.id == user.id
   end
 
 end
