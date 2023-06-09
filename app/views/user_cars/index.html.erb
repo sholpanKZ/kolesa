@@ -1,9 +1,12 @@
-<h1>My Cars</h1>
+<h1>My CARS</h1>
+<%= link_to "New Car", new_car_path, class: "btn btn-success" %>
+<br/>
+<p class="fw-light">Found <%= @user_cars.size %> cars.</p>
 
-<% @user_cars.each do |car| %>
-  <div>
-    <h2><%= car.name %> <%= car.color %> <%= car.price %></h2>
-    <p>Year: <%= car.description %></p>
-    <!-- Add other car details as needed -->
-  </div>
-<% end %>
+<ul>
+  <% @user_cars.each do |car| %>
+      <li>
+        <%= link_to car.name, car %> <%= "archived" if car.archived? %>
+      </li>
+  <% end %>
+</ul>

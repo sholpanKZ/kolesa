@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   get 'home/show' => "home#show"
   root "cars#index"
 
+  resources :user_cars, only: [:index]
   resources :cars do
     resources :comments
-    resources :user_cars, only: [:index]
   end
 end
