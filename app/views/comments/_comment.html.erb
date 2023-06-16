@@ -8,10 +8,11 @@
     <strong>Comment:</strong>
     <%= comment.body %>
   </p>
-    <p>
+  <p>
+  <% if policy(comment).destroy? %>
     <%= link_to "Destroy Comment", [comment.car, comment], data: {
                   turbo_method: :delete,
-                  turbo_confirm: "Are you sure?"
-                } %>
-  </p>
+                  turbo_confirm: "Are you sure?" } %>
+      </p>
+  <% end %>
 <% end %>

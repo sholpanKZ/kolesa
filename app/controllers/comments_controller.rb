@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
    def destroy
     @car = Car.find(params[:car_id])
     @comment = @car.comments.find(params[:id])
+    authorize @comment
     @comment.destroy
     redirect_to car_path(@car), status: :see_other
   end
