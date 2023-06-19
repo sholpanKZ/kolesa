@@ -7,7 +7,8 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.car = @car
     @comment.author = current_user
-    @comment.save
+    authorize @comment
+    @comment.save if @car.owner_id != current_user.id
     redirect_to car_path(@car)
   end
 

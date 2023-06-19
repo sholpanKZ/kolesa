@@ -28,6 +28,7 @@
 
 <h2>Comments</h2>
 <%= render @car.comments %>
-
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+<% if policy(@car).comment_create? %>
+  <h2>Add a comment:</h2>
+  <%=  render 'comments/form'  %>
+<%  end %>
